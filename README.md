@@ -51,7 +51,7 @@ Vous pouvez remplacer `"dupe both"` par l'une des **3 configurations suivantes**
 > Effectuez la manipulation ci-dessous **UNIQUEMENT** si, lors du lancement du script dans mGBA, vous obtenez l'erreur suivante dans la console :
 > `Impossible de détecter le dossier automatiquement` suivie d'un crash `cannot open nil...`.
 
-Si (et seulement si) la détection automatique échoue, ouvrez les fichiers suivants et modifiez la variable `root` pour y renseigner manuellement le chemin absolu du dossier de l'application sur votre ordinateur :
+Si (et seulement si) la détection automatique échoue, ouvrez les fichiers suivants et modifiez la variable `root` pour y renseigner manuellement l'adresse du dossier contenant les lua téléchargés sur votre ordinateur :
 
 #### ! Il est important, comme sur l'exemple, d'utiliser des / entre les dossiers, et non des \ pour le path
 ❌ H:\Downloads\Run&Bun\NG+ Encounter Generator\
@@ -170,7 +170,7 @@ You can set it to one of these **3 valid choices**:
 > Follow the steps below **ONLY** if you encounter the following error message inside the mGBA script console when launching the tool:
 > `Impossible de détecter le dossier automatiquement` followed by a `cannot open nil...` crash.
 
-If (and only if) the auto-detection fails, open the following files and manually edit the `root` variable to match the absolute directory path of the tool on your computer:
+If (and only if) the auto-detection fails, open the following files and manually edit the `root` variable to match the absolute directory path of the directory you've installed on your computer:
 
 #### ! It is a must, like the example, to use / between folder instead of \ for the path
 
