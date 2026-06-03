@@ -38,6 +38,30 @@ Pour que la clause de doublons fonctionne, le script doit connaître la liste de
 
 ---
 
+### 3. Gestion avancée des doublons (Optionnel)
+
+Par défaut, l'outil lie l'ensemble des formes régionales au même ID de doublon. Vous pouvez personnaliser ce comportement selon les règles de votre Nuzlocke en modifiant la variable `selectedDupesMode` située à la **ligne 174 du fichier `runner.lua**` :
+
+```lua
+-- À la ligne 174 de runner.lua
+local selectedDupesMode  = "dupe both" 
+
+```
+
+Vous pouvez remplacer `"dupe both"` par l'une des **3 configurations suivantes** :
+
+* **`"dupe both"`** : La forme de base, la forme régionale ainsi que son évolution partagent la même famille de doublons. Si vous possédez l'une des formes, toutes les autres variantes de l'espèce sont bloquées dans les zones de rencontre.
+* *Exemple :* Si vous possédez Growlithe, Growlithe-Hisui et Arcanine-Hisui seront considérés comme des doublons et exclus des futurs tirages.
+
+* **`"same name"`** : Permet de dissocier les nouvelles évolutions exclusives (comme Sneasler ou Overqwil) de l'espèce d'origine si elles ne partagent pas exactement le même nom, tout en bloquant les formes qui ont le même nom de base.
+* *Exemple :* Posséder Sneasel de Johto bloquera Sneasel-Hisui, mais vous laissera l'opportunité de capturer Farfurex (Sneasler).
+
+* **`"neither"`** : Toutes les formes régionales et leurs évolutions exclusives sont considérées comme des lignées totalement indépendantes. Capturer une forme d'Alola, de Galar ou d'Hisui ne bloque pas la forme classique.
+* *Exemple :* Pour `"Raichu-Alola"`, capturer un Raichu normal ne vous empêchera pas de tomber sur la variante d'Alola.
+
+
+---
+
 ## 🎮 Utilisation en jeu
 
 Une fois la configuration terminée, lancez votre émulateur (mGBA 0.10+ recommandé), ouvrez les outils de script et chargez le fichier `Run&Bun Tracking Script.lua`.
@@ -118,6 +142,31 @@ For the dupe clause to function correctly, the script requires the list of Poké
 5. Go to the hidden tab called **"NG+ Dupes Json Generator"**.
 6. Click the **"Click Me"** button to format the dataset.
 7. Copy the entire generated text structure and overwrite the content of the **`dupes.json`** file inside the `data/` subfolder (or root folder depending on your setup).
+
+---
+
+### 3. Advanced Dupes Configuration (Optional)
+
+By default, the generator locks regional forms under the same dupe family as their base form. You can adjust this to your custom Nuzlocke rules by changing the `selectedDupesMode` value at **line 174 inside `runner.lua**`:
+
+```lua
+-- On line 174 of runner.lua
+local selectedDupesMode  = "dupe both" 
+
+```
+
+You can set it to one of these **3 valid choices**:
+
+* **`"dupe both"`**: Base form, regional form, and its evolution all share the exact same dupe family ID. Catching any version locks out the entire species family from future rolls.
+* *Example :* For Growlithe, owning a regular Growlithe automatically treats Growlithe-Hisui and Arcanine-Hisui as dupes.
+
+
+* **`"same name"`**: Dissociates brand new exclusive evolutions (like Sneasler or Overqwil) that do not explicitly share the original species name, while keeping same-named regional forms locked.
+* *Example :* Owning a vanilla Sneasel will block Sneasel-Hisui, but leaves Sneasler open to be rolled.
+
+
+* **`"neither"`**: Every regional variant and variant evolution line is treated completely independently from its vanilla counterpart.
+* *Example :* Catching a standard Kanto Raichu won't prevent the Alolan variant from appearing.
 
 ---
 
