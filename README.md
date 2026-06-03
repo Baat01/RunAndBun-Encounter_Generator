@@ -34,13 +34,13 @@ local selectedDupesMode  = "dupe both"
 Vous pouvez remplacer `"dupe both"` par l'une des **3 configurations suivantes** :
 
 * **`"dupe both"`** : La forme de base, la forme régionale ainsi que son évolution partagent la même famille de doublons. Si vous possédez l'une des formes, toutes les autres variantes de l'espèce sont bloquées dans les zones de rencontre.
-* *Exemple :* Si vous possédez Growlithe, Growlithe-Hisui et Arcanine-Hisui seront considérés comme des doublons et exclus des futurs tirages.
+  *Exemple :* Si vous possédez Growlithe, Growlithe-Hisui et Arcanine-Hisui seront considérés comme des doublons et exclus des futurs tirages.
 
 * **`"same name"`** : Permet de dissocier les nouvelles évolutions exclusives (comme Sneasler ou Overqwil) de l'espèce d'origine si elles ne partagent pas exactement le même nom, tout en bloquant les formes qui ont le même nom de base.
-* *Exemple :* Posséder Sneasel de Johto bloquera Sneasel-Hisui, mais vous laissera l'opportunité de capturer Farfurex (Sneasler).
+  *Exemple :* Posséder Sneasel de Johto bloquera Sneasel-Hisui, mais vous laissera l'opportunité de capturer Farfurex (Sneasler).
 
 * **`"neither"`** : Toutes les formes régionales et leurs évolutions exclusives sont considérées comme des lignées totalement indépendantes. Capturer une forme d'Alola, de Galar ou d'Hisui ne bloque pas la forme classique.
-* *Exemple :* Pour `"Raichu-Alola"`, capturer un Raichu normal ne vous empêchera pas de tomber sur la variante d'Alola.
+  *Exemple :* Pour `"Raichu-Alola"`, capturer un Raichu normal ne vous empêchera pas de tomber sur la variante d'Alola.
 
 ---
 
@@ -153,15 +153,15 @@ local selectedDupesMode  = "dupe both"
 You can set it to one of these **3 valid choices**:
 
 * **`"dupe both"`**: Base form, regional form, and its evolution all share the exact same dupe family ID. Catching any version locks out the entire species family from future rolls.
-* *Example :* For Growlithe, owning a regular Growlithe automatically treats Growlithe-Hisui and Arcanine-Hisui as dupes.
+  *Example :* For Growlithe, owning a regular Growlithe automatically treats Growlithe-Hisui and Arcanine-Hisui as dupes.
 
 
 * **`"same name"`**: Dissociates brand new exclusive evolutions (like Sneasler or Overqwil) that do not explicitly share the original species name, while keeping same-named regional forms locked.
-* *Example :* Owning a vanilla Sneasel will block Sneasel-Hisui, but leaves Sneasler open to be rolled.
+  *Example :* Owning a vanilla Sneasel will block Sneasel-Hisui, but leaves Sneasler open to be rolled.
 
 
 * **`"neither"`**: Every regional variant and variant evolution line is treated completely independently from its vanilla counterpart.
-* *Example :* Catching a standard Kanto Raichu won't prevent the Alolan variant from appearing.
+  *Example :* Catching a standard Kanto Raichu won't prevent the Alolan variant from appearing.
 
 ---
 ### 3. Synchronizing Local Directory Paths (Optional / Fallback)
