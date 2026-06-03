@@ -34,7 +34,7 @@ local selectedDupesMode  = "dupe both"
 Vous pouvez remplacer `"dupe both"` par l'une des **3 configurations suivantes** :
 
 * **`"dupe both"`** : La forme de base, la forme régionale ainsi que son évolution partagent la même famille de doublons. Si vous possédez l'une des formes, toutes les autres variantes de l'espèce sont bloquées dans les zones de rencontre.
-  *Exemple :* Si vous possédez Growlithe, Growlithe-Hisui et Arcanine-Hisui seront considérés comme des doublons et exclus des futurs tirages.
+  \n*Exemple :* Si vous possédez Growlithe, Growlithe-Hisui et Arcanine-Hisui seront considérés comme des doublons et exclus des futurs tirages.
 
 * **`"same name"`** : Permet de dissocier les nouvelles évolutions exclusives (comme Sneasler ou Overqwil) de l'espèce d'origine si elles ne partagent pas exactement le même nom, tout en bloquant les formes qui ont le même nom de base.
   *Exemple :* Posséder Sneasel de Johto bloquera Sneasel-Hisui, mais vous laissera l'opportunité de capturer Farfurex (Sneasler).
