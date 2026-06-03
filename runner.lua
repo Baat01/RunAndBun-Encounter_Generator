@@ -41,7 +41,17 @@ local function loadCSV(path)
   return data
 end
 
-local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
+local root = ""
+
+local info = debug.getinfo(1, "S")
+local script_path = info and info.source
+
+if script_path and script_path:sub(1,1) == "@" then
+    script_path = script_path:sub(2)
+    local current_dir = script_path:match("(.*[/\\])")
+    
+    root = current_dir or ""
+end
 
 local dataDir   = join(root,"data")
 

@@ -8226,7 +8226,22 @@ local mirageValue = 0x02026DE4
 -- =====================================================
 -- Initialisation : Chargement du Runner et de ses données
 -- =====================================================
-local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
+
+-- 1. On déclare root globalement ou localement tout en haut du script
+local root = ""
+
+local info = debug.getinfo(1, "S")
+local script_path = info and info.source
+
+if script_path and script_path:sub(1,1) == "@" then
+    script_path = script_path:sub(2)
+    local current_dir = script_path:match("(.*[/\\])")
+    
+    -- 2. On initialise root ICI si le chemin est trouvé
+    root = current_dir or ""
+else
+    console:log("Impossible de détecter le dossier automatiquement.")
+end
 
 -- dofile exécute le fichier et récupère le tableau retourné à la fin
 local runner = dofile(root .. "./runner.lua")
@@ -9821,6 +9836,17 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
 
     -- 6. Génération de la nature et des IVs aléatoires
     local randomNature = nature[math.random(1, #nature)]
+    
+    -- 🌟 EFFET SYNCHRONIZE (PC) : S'applique car la cible va dans le PC (donc pas au slot 1 de l'équipe)
+    if firstMonAddress and emu:read32(firstMonAddress) ~= 0 then
+        local firstMon = readPartyMon(firstMonAddress)
+        local firstMonAbility = getAbility(firstMon)
+        if firstMonAbility == "Synchronize" and math.random() < 0.5 then
+            randomNature = getNature(firstMon)
+            console:log(string.format("[INFO] Synchronize activé ! Nature forcée à : %s", randomNature))
+        end
+    end
+
     local randomIVs = {}
     for i = 1, 6 do randomIVs[i] = math.random(0, 31) end
     local selectedAbilityNum = math.random(0, 1)
@@ -9862,11 +9888,6 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
         selectedAbilityNum,   -- Talent (0 ou 1)
         nil                   -- Aucun objet tenu
     )
-
-    -- 🌟 9. AJOUT AUTOMATIQUE AUX DUPES DU JOUEUR APRÈS CAPTURE REUSSIE
-    if data and data.player_dupes then
-        table.insert(data.player_dupes, pokemonName)
-    end
 
     -- 10. Journalisation claire du succès dans la console
     console:log("=====================================================")
@@ -10006,6 +10027,20 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
 
     -- 5. Génération de la nature et des IVs aléatoires
     local randomNature = nature[math.random(1, #nature)]
+    
+    -- 🌟 EFFET SYNCHRONIZE (PARTY) : S'applique uniquement si la cible n'écrase pas le slot 1
+    if slotTarget > 1 then
+        local firstMonAddress = getSlotAddress(1)
+        if firstMonAddress and emu:read32(firstMonAddress) ~= 0 then
+            local firstMon = readPartyMon(firstMonAddress)
+            local firstMonAbility = getAbility(firstMon)
+            if firstMonAbility == "Synchronize" and math.random() < 0.5 then
+                randomNature = getNature(firstMon)
+                console:log(string.format("[INFO] Synchronize activé ! Nature forcée à : %s", randomNature))
+            end
+        end
+    end
+
     local randomIVs = {}
     for i = 1, 6 do randomIVs[i] = math.random(0, 31) end
     local selectedAbilityNum = math.random(0, 1)
@@ -10025,11 +10060,6 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
     for moveSlot = 1, 4 do
         local assignedMove = movesToLearn[moveSlot] or "None"
         setMove(slotTarget, moveSlot, assignedMove)
-    end
-
-    -- 🌟 AJOUT AUTOMATIQUE AUX DUPES DU JOUEUR APRÈS CAPTURE
-    if data and data.player_dupes then
-        table.insert(data.player_dupes, pokemonName)
     end
 
     console:log("=====================================================")
