@@ -2,6 +2,8 @@
 
 Ce projet est un outil d'injection et de génération de rencontres Pokémon conçu spécifiquement pour les parties de **Pokémon Run & Bun** en **New Game Plus (NG+)**. Il permet de simuler et de générer des rencontres basées sur les tables d'apparition d'une zone tout en respectant une clause stricte de doublons (Dupes) entièrement synchronisée avec la progression globale de vos différentes parties.
 
+### [Vidéo Explicative](https://youtu.be/VBsDlsB26O0) 
+
 ## 🛠️ Configuration & Setup
 
 Avant de pouvoir utiliser l'outil en jeu, vous devez configurer vos chemins d'accès locaux et générer votre liste personnalisée de doublons.
