@@ -10067,6 +10067,7 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
     console:log(string.format("Espèce          : %s (ID: %d) | Lv.%d", pokemonName, speciesID, finalLevel))
     console:log(string.format("Famille Dupe    : %s", getDupeFamily(pokemonName) or "Aucune"))
     console:log(string.format("IVs             : %s", table.concat(randomIVs, "/")))
+    console:log(string.format("Nature / Talent : %s / Clé: %d", randomNature, selectedAbilityNum))
     console:log(string.format("Attaques        : %s", #movesToLearn > 0 and table.concat(movesToLearn, ", ") or "Aucune"))
     console:log("=====================================================")
 
