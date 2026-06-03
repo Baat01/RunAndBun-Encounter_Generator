@@ -173,8 +173,7 @@ console:log("Tous les fichiers JSON et JS ont été chargés avec succès.")
 -- Charger les paramètres utilisateur
 local selectedDupesMode  = "dupe both"
 
-console:log("Paramètres de session :")
-console:log("   Mode dupes :", console:log(selectedDupesMode))
+console:log(string.format("Mode dupes : %s", selectedDupesMode))
 
 -- =====================================================
 -- Exposer les données globales au randomizer
