@@ -14,13 +14,11 @@ Après avoir extrait et déplacé le dossier à l'emplacement voulu, ouvrez les 
 ❌ H:\Downloads\Run&Bun\NG+ Encounter Generator\
 ✅ H:/Downloads/Run&Bun/NG+ Encounter Generator/
 
-* **Dans `runner.lua**` (Ligne 44) :
+* **Dans `runner.lua`** (Ligne 44) :
 ```lua
 local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
 
 ```
-
-
 
 * **Dans `Run&Bun Tracking Script.lua`** (Ligne 8232) :
   ```lua
