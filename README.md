@@ -310,5 +310,3 @@ Here is the full list of valid string values for the `zoneNameInput` parameter:
 * "Victory Road B1F Surf"
 * "Victory Road B2F Land"
 * "Victory Road B2F Rock Smash"
-
-```
