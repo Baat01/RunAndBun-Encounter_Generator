@@ -8,7 +8,11 @@ Avant de pouvoir utiliser l'outil en jeu, vous devez configurer vos chemins d'ac
 
 ### 1. Synchronisation des chemins locaux
 
-Ouvrez les fichiers suivants et modifiez la variable `root` pour y renseigner le chemin absolu du dossier de l'application sur votre ordinateur :
+Après avoir extrait et déplacé le dossier à l'emplacement voulu, ouvrez les fichiers suivants et modifiez la variable `root` pour y renseigner le chemin absolu du dossier de l'application sur votre ordinateur :
+
+#### ! il est important, comme sur l'exemple, d'utiliser des / entre les dossiers, et non des \ pour le path
+❌ H:\Downloads\Run&Bun\NG+ Encounter Generator\
+✅ H:/Downloads/Run&Bun/NG+ Encounter Generator/
 
 * **Dans `runner.lua**` (Ligne 44) :
 ```lua
@@ -28,7 +32,7 @@ local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
 
 Pour que la clause de doublons fonctionne, le script doit connaître la liste des Pokémon que vous avez déjà capturés lors de vos sessions précédentes.
 
-1. Rendez-vous sur la feuille de calcul **Advanced Frag Sheet** disponible à cette adresse : [Advanced Frag Sheet](https://docs.google.com/spreadsheets/d/1qA8Zttt3hKR7pwfvDVw3S7xuNEcPYc8kO_TDyea_L5I/edit?usp=sharing).
+1. Rendez-vous sur la feuille de calcul (et faites en une copie si ce n'est pas déjà le cas) **Advanced Frag Sheet** disponible à cette adresse : [Advanced Frag Sheet](https://docs.google.com/spreadsheets/d/1qA8Zttt3hKR7pwfvDVw3S7xuNEcPYc8kO_TDyea_L5I/edit?usp=sharing).
 2. Renseignez l'ensemble de vos captures de la partie classique dans l'onglet caché nommé **"New Game + Dupes"**.
 3. Si vous avez déjà effectué un NG+, inscrivez-les également.
 4. Si nécessaire, complétez avec les captures de votre run actuelle en utilisant votre export via le script (Page Run&Bun Nuzlocke Tracker).
@@ -66,7 +70,9 @@ Vous pouvez remplacer `"dupe both"` par l'une des **3 configurations suivantes**
 
 Une fois la configuration terminée, lancez votre émulateur (mGBA 0.10+ recommandé), ouvrez les outils de script et chargez le fichier `Run&Bun Tracking Script.lua`.
 
-Deux fonctions majeures deviennent alors disponibles dans la console pour faire vos tirages :
+Deux fonctions majeures deviennent alors disponibles dans la console pour faire vos zones :
+
+#### ! Pour ces deux fonctions, le pokémon n'est pas généré de 0, il vous faut avoir déjà un pokémon dans le slot sur lequel vous l'utilisez
 
 ### Générer une rencontre dans l'Équipe (Party)
 
@@ -98,8 +104,6 @@ DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
 
 > **Note sur les fonctionnalités automatiques :**
 > * **Magnet Pull & Static :** Si vous ciblez un emplacement autre que le premier slot, le script vérifie automatiquement le talent du Pokémon en tête de votre équipe. S'il possède Magnet Pull ou Static, le pool de la zone se restreindra (avec 50% de chances) aux types Acier ou Électrique.
-> 
-> 
 
 La liste exacte de toutes les valeurs valides utilisables pour le paramètre `zoneNameInput` est disponible en bas du readme
 
@@ -116,7 +120,13 @@ This project is an injection and encounter generation tool designed specifically
 Before running the tool in-game, you must configure your local folder paths and generate your personalized dupes file.
 
 ### 1. Synchronizing Local Directory Paths
-Open the following files and edit the `root` variable to match the absolute directory path of the tool on your computer:
+
+After extracting and moving the folder to the desired location, open the following files and edit the `root` variable to match the absolute directory path of the tool on your computer:
+
+
+#### ! It is a must, like the example, to use / between folder instead of \ for the path
+❌ H:\Downloads\Run&Bun\NG+ Encounter Generator\
+✅ H:/Downloads/Run&Bun/NG+ Encounter Generator/
 
 * **Inside `runner.lua`** (Line 44):
 ```lua
@@ -135,7 +145,7 @@ Open the following files and edit the `root` variable to match the absolute dire
 
 For the dupe clause to function correctly, the script requires the list of Pokémon you have already caught in your previous playthroughs.
 
-1. Open the **Advanced Frag Sheet** tracking spreadsheet here: [Advanced Frag Sheet](https://docs.google.com/spreadsheets/d/1qA8Zttt3hKR7pwfvDVw3S7xuNEcPYc8kO_TDyea_L5I/edit?usp=sharing).
+1. Open and make a copy of the **Advanced Frag Sheet** tracking spreadsheet here: [Advanced Frag Sheet](https://docs.google.com/spreadsheets/d/1qA8Zttt3hKR7pwfvDVw3S7xuNEcPYc8kO_TDyea_L5I/edit?usp=sharing).
 2. Input all of your caught encounters from your classic run into the hidden tab named **"New Game + Dupes"**.
 3. If you have already finished NG+, add them too.
 4. If necessary, complete it with the current run's encounters using your Box export from the script (Tab Run&Bun Nuzlocke Tracker).
@@ -175,6 +185,8 @@ You can set it to one of these **3 valid choices**:
 Once configuration is complete, boot up your emulator (mGBA 0.10+ recommended), open the scripting tools, and load the **`Run&Bun Tracking Script.lua`** file.
 
 Two main functions will become available in your console to trigger rolls:
+
+#### ! For both of the functions, the pokemon isn't generated but replaced, so you already need to have a pokemon on the slot you're using it on
 
 ### Inject an Encounter into your Party
 
