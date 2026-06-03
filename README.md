@@ -10,7 +10,7 @@ Avant de pouvoir utiliser l'outil en jeu, vous devez configurer vos chemins d'ac
 
 Après avoir extrait et déplacé le dossier à l'emplacement voulu, ouvrez les fichiers suivants et modifiez la variable `root` pour y renseigner le chemin absolu du dossier de l'application sur votre ordinateur :
 
-#### ! il est important, comme sur l'exemple, d'utiliser des / entre les dossiers, et non des \ pour le path
+#### ! Il est important, comme sur l'exemple, d'utiliser des / entre les dossiers, et non des \ pour le path
 ❌ H:\Downloads\Run&Bun\NG+ Encounter Generator\
 ✅ H:/Downloads/Run&Bun/NG+ Encounter Generator/
 
@@ -102,6 +102,7 @@ DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
 
 > **Note sur les fonctionnalités automatiques :**
 > * **Magnet Pull & Static :** Si vous ciblez un emplacement autre que le premier slot, le script vérifie automatiquement le talent du Pokémon en tête de votre équipe. S'il possède Magnet Pull ou Static, le pool de la zone se restreindra (avec 50% de chances) aux types Acier ou Électrique.
+> * **Synchro :** Si vous ciblez un emplacement autre que le premier slot, le script vérifie automatiquement le talent du Pokémon en tête de votre équipe. S'il possède Synchro, le pokémon obtenu aura une chance sur deux d'avoir la même nature que celui-ci.
 
 La liste exacte de toutes les valeurs valides utilisables pour le paramètre `zoneNameInput` est disponible en bas du readme
 
@@ -217,8 +218,7 @@ DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
 
 > **About automatic function :**
 > * **Magnet Pull & Static :** If you chose a slot other than the first one, the script will automatically check the ability of your lead. If he has Magnet Pull or Static, it'll get a chance to proc, and restrain the pool to Steel/Electric types.
-> 
->
+> * **Synchronize :** If you chose a slot other than the first one, the script will automatically check the ability of your lead. If he has Synchronize, it'll get a chance to proc, and have the nature of the synchronize mon.
 
 ---
 
