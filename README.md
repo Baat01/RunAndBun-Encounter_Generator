@@ -10,7 +10,7 @@ Avant de pouvoir utiliser l'outil en jeu, vous devez configurer vos chemins d'ac
 
 Ouvrez les fichiers suivants et modifiez la variable `root` pour y renseigner le chemin absolu du dossier de l'application sur votre ordinateur :
 
-* **Dans `runner.lua**` (Ligne 43) :
+* **Dans `runner.lua**` (Ligne 44) :
 ```lua
 local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
 
@@ -18,12 +18,9 @@ local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
 
 
 
-```
-* **Dans `Run&Bun Tracking Script.lua`** (Ligne 513)[cite: 10] :
+* **Dans `Run&Bun Tracking Script.lua`** (Ligne 8232) :
   ```lua
   local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
-
-```
 
 ---
 
@@ -32,9 +29,9 @@ local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
 Pour que la clause de doublons fonctionne, le script doit connaître la liste des Pokémon que vous avez déjà capturés lors de vos sessions précédentes.
 
 1. Rendez-vous sur la feuille de calcul **Advanced Frag Sheet** disponible à cette adresse : [Advanced Frag Sheet](https://docs.google.com/spreadsheets/d/1qA8Zttt3hKR7pwfvDVw3S7xuNEcPYc8kO_TDyea_L5I/edit?usp=sharing).
-2. Renseignez l'ensemble de vos captures de la partie classique.
-3. Si vous avez déjà effectué des captures en NG+, inscrivez-les également dans l'onglet caché nommé **"New Game + Dupes"**.
-4. Si nécessaire, complétez avec les captures de votre run actuelle en utilisant votre export Showdown de boîtes.
+2. Renseignez l'ensemble de vos captures de la partie classique dans l'onglet caché nommé **"New Game + Dupes"**.
+3. Si vous avez déjà effectué un NG+, inscrivez-les également.
+4. Si nécessaire, complétez avec les captures de votre run actuelle en utilisant votre export via le script (Page Run&Bun Nuzlocke Tracker).
 5. Allez sur l'onglet caché intitulé **"NG+ Dupes Json Generator"**.
 6. Cliquez sur le bouton **"Click Me"** présent sur la page pour générer la structure de données.
 7. Copiez l'intégralité du texte généré et remplacez le contenu du fichier `dupes.json` situé dans le sous-dossier `data/` de votre projet.
@@ -75,167 +72,17 @@ DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
 
 **Exemple :** `DupedEncounterToPC("Littleroot Town Fishing", 0, false)`
 
-> 🌟 **Note sur les fonctionnalités automatiques :**
-> * **Magnet Pull & Static :** Si vous ciblez un emplacement autre que le premier slot, le script vérifie automatiquement le talent du Pokémon en tête de votre équipe. S'il possède Magnet Pull ou Static, le pool de la zone se restreindra (avec 50% de chances) aux types Acier ou Électrik.
-> * **Mise à jour en direct :** Dès qu'un Pokémon est généré avec succès par l'une de ces commandes, sa famille d'évolution est instantanément ajoutée à vos doublons en mémoire vive pour les futurs tirages.
+> **Note sur les fonctionnalités automatiques :**
+> * **Magnet Pull & Static :** Si vous ciblez un emplacement autre que le premier slot, le script vérifie automatiquement le talent du Pokémon en tête de votre équipe. S'il possède Magnet Pull ou Static, le pool de la zone se restreindra (avec 50% de chances) aux types Acier ou Électrique.
 > 
 > 
 
----
-
-## 🗺️ Tables d'encounters disponibles (Triées par nom)
-
-Voici la liste exacte de toutes les valeurs valides utilisables pour le paramètre `zoneNameInput` :
-
-* "Abandoned Ship B1F Rooms Fishing"
-* "Abandoned Ship B1F Rooms Surf"
-* "Altering Cave Land"
-* "Aqua Hideout B1F Land"
-* "Desert Underpass Land"
-* "Dewford Town Fishing"
-* "Dewford Town Land"
-* "Dewford Town Surf"
-* "Ever Grande City Land"
-* "Fallarbor Town Land"
-* "Fiery Path Land"
-* "Fortree City Fishing"
-* "Fortree City Land"
-* "Fortree City Surf"
-* "Granite Cave 1F Land"
-* "Granite Cave B1F Land"
-* "Granite Cave B2F Land"
-* "Granite Cave B2F Rock Smash"
-* "Jagged Pass Land"
-* "Lavaridge Town Gift"
-* "Lilycove City Land"
-* "Littleroot Town Fishing"
-* "Littleroot Town Surf"
-* "Magma Hideout Room 1 Land"
-* "Magma Hideout Room 2-4 Land"
-* "Magma Hideout Room 5 Land"
-* "Magma Hideout Room 6-7 Land"
-* "Meteor Falls 1F1 Fishing"
-* "Meteor Falls 1F1 Land"
-* "Meteor Falls 1F1 Surf"
-* "Mirage Tower 1F Land"
-* "Mirage Tower 2F Land"
-* "Mirage Tower 3F Land"
-* "Mirage Tower 4F Land"
-* "Mossdeep City Land"
-* "Mt. Chimney Land"
-* "Mt. Pyre 1F-2F Fishing"
-* "Mt. Pyre 3F-4F Fishing"
-* "Mt. Pyre 5F-6F Fishing"
-* "Mt. Pyre (Exterior) Fishing"
-* "Mt. Pyre (Summit) Fishing"
-* "New Mauville (Inside) Land"
-* "New Mauville (Outside) Land"
-* "New Mauville Gift"
-* "Oldale Town Land"
-* "Petalburg City Fishing"
-* "Petalburg City Surf"
-* "Petalburg Woods Land"
-* "Route 101 Land"
-* "Route 102 Fishing"
-* "Route 102 Land"
-* "Route 102 Surf"
-* "Route 103 Fishing"
-* "Route 103 Land"
-* "Route 103 Surf"
-* "Route 104 Fishing"
-* "Route 104 Land"
-* "Route 104 Surf"
-* "Route 105 Fishing"
-* "Route 105 Land"
-* "Route 105 Surf"
-* "Route 106 Fishing"
-* "Route 106 Surf"
-* "Route 107 Fishing"
-* "Route 107 Surf"
-* "Route 108 Fishing"
-* "Route 108 Surf"
-* "Route 109 Fishing"
-* "Route 109 Surf"
-* "Route 110 Fishing"
-* "Route 110 Land"
-* "Route 110 Surf"
-* "Route 111 Fishing"
-* "Route 111 Land"
-* "Route 111 Rock Smash"
-* "Route 111 Surf"
-* "Route 112 Land"
-* "Route 113 Land"
-* "Route 114 Fishing"
-* "Route 114 Land"
-* "Route 114 Rock Smash"
-* "Route 114 Surf"
-* "Route 115 Fishing"
-* "Route 115 Surf"
-* "Route 116 Land"
-* "Route 117 Fishing"
-* "Route 117 Land"
-* "Route 117 Surf"
-* "Route 118 Fishing"
-* "Route 118 Land"
-* "Route 118 Surf"
-* "Route 119 Fishing"
-* "Route 119 Gift"
-* "Route 119 Land"
-* "Route 119 Surf"
-* "Route 120 Fishing"
-* "Route 120 Land"
-* "Route 120 Surf"
-* "Route 121 Fishing"
-* "Route 121 Land"
-* "Route 121 Surf"
-* "Route 122 Land"
-* "Route 123 Land"
-* "Route 124 Land"
-* "Route 125 Land"
-* "Route 126 Land"
-* "Route 127 Land"
-* "Route 128 Land"
-* "Route 129 Land"
-* "Route 130 Land"
-* "Route 131 Land"
-* "Route 134 Fishing"
-* "Route 134 Surf"
-* "Safari Zone (North) Land"
-* "Safari Zone (Northwest) Land"
-* "Safari Zone (South) Fishing"
-* "Safari Zone (South) Land"
-* "Safari Zone (South) Surf"
-* "Safari Zone (Southwest) Land"
-* "Scorched Slab Fishing"
-* "Scorched Slab Land"
-* "Scorched Slab Surf"
-* "Seafloor Cavern Entrance Land"
-* "Seafloor Cavern Rooms 1-5 Land"
-* "Shoal Cave (Entrance/Inner) Land"
-* "Shoal Cave (Ice Room) Fishing"
-* "Shoal Cave (Ice Room) Land"
-* "Shoal Cave (Ice Room) Surf"
-* "Shoal Cave (Other Rooms) Land"
-* "Slateport City Fishing"
-* "Slateport City Surf"
-* "Sootopolis City Land"
-* "Steven's Room Land"
-* "Sky Pillar 1F and 3F Land"
-* "Sky Pillar 5F Land"
-* "Verdanturf Town Land"
-* "Victory Road 1F Land"
-* "Victory Road B1F Fishing"
-* "Victory Road B1F Land"
-* "Victory Road B1F Rock Smash"
-* "Victory Road B1F Surf"
-* "Victory Road B2F Land"
-* "Victory Road B2F Rock Smash"
+La liste exacte de toutes les valeurs valides utilisables pour le paramètre `zoneNameInput` est disponible en bas du readme
 
 ---
 
-# English Version (`README.md`)
+# English Version 
 
-```markdown
 # Run & Bun - NG+ Encounter Generator
 
 This project is an injection and encounter generation tool designed specifically for **Pokémon Run & Bun** in **New Game Plus (NG+)** mode. It simulates and generates random encounters based on a zone's encounter table while enforcing a strict dupe clause synchronized with your global cross-save progression.
@@ -247,13 +94,13 @@ Before running the tool in-game, you must configure your local folder paths and 
 ### 1. Synchronizing Local Directory Paths
 Open the following files and edit the `root` variable to match the absolute directory path of the tool on your computer:
 
-* **Inside `runner.lua`** (Line 43):
+* **Inside `runner.lua`** (Line 44):
 ```lua
   local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
 
 ```
 
-* **Inside `Run&Bun Tracking Script.lua**` (Line 513):
+* **Inside `Run&Bun Tracking Script.lua**` (Line 8232):
 
 ```lua
   local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
@@ -265,9 +112,9 @@ Open the following files and edit the `root` variable to match the absolute dire
 For the dupe clause to function correctly, the script requires the list of Pokémon you have already caught in your previous playthroughs.
 
 1. Open the **Advanced Frag Sheet** tracking spreadsheet here: [Advanced Frag Sheet](https://docs.google.com/spreadsheets/d/1qA8Zttt3hKR7pwfvDVw3S7xuNEcPYc8kO_TDyea_L5I/edit?usp=sharing).
-2. Input all of your caught encounters from your classic run.
-3. If you have already caught Pokémon in your current NG+, make sure to add them into the hidden tab named **"New Game + Dupes"**.
-4. If necessary, complete it with the current run's encounters using your Showdown Box export.
+2. Input all of your caught encounters from your classic run into the hidden tab named **"New Game + Dupes"**.
+3. If you have already finished NG+, add them too.
+4. If necessary, complete it with the current run's encounters using your Box export from the script (Tab Run&Bun Nuzlocke Tracker).
 5. Go to the hidden tab called **"NG+ Dupes Json Generator"**.
 6. Click the **"Click Me"** button to format the dataset.
 7. Copy the entire generated text structure and overwrite the content of the **`dupes.json`** file inside the `data/` subfolder (or root folder depending on your setup).
@@ -307,6 +154,12 @@ DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
 * **`pcSlotIndex`** *(number)*: The exact index of the target PC slot (0 for the very first case, 1 for the second, etc.).
 
 **Example:** `DupedEncounterToPC("Littleroot Town Fishing", 0, false)`
+
+
+> **About automatic function :**
+> * **Magnet Pull & Static :** If you chose a slot other than the first one, the script will automatically check the ability of your lead. If he has Magnet Pull or Static, it'll get a chance to proc, and restrain the pool to Steel/Electric types.
+> 
+>
 
 ---
 
