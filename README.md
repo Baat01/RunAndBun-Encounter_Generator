@@ -133,7 +133,7 @@ After extracting and moving the folder to the desired location, open the followi
 
 ```
 
-* **Inside `Run&Bun Tracking Script.lua**` (Line 8232):
+* **Inside `Run&Bun Tracking Script.lua`** (Line 8232):
 
 ```lua
   local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
