@@ -83,7 +83,7 @@ DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
 
 * **`zoneNameInput`** *(string)* : Le nom de la table d'apparition à cibler (recherche permissive par mot-clé, voir la liste en fin de fichier).
 * **`slotTarget`** *(number)* : L'emplacement dans votre équipe active où injecter le Pokémon (1 à 6).
-* **`repelManip`** *(boolean)* : Mettez `true` si vous souhaitez activer la repel manip (force l'obtention du niveau maximum de la zone), sinon mettez `false`.
+* **`repelManip`** *(boolean)* : Mettez `true` si vous souhaitez activer la repel manip (force l'obtention du niveau maximum de la zone), sinon mettez `false`. Ne pas mettre d'argument n'activera pas la repel manip (voir l'exemple PC).
 
 **Exemple :** `DupedEncounterToParty("Meteor Falls 1F1 Surf", 2, true)`
 
@@ -98,7 +98,7 @@ DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
 
 * **`pcSlotIndex`** *(number)* : L'index de la case du PC cible (0 pour le premier emplacement, 1 pour le second, etc.).
 
-**Exemple :** `DupedEncounterToPC("Littleroot Town Fishing", 0, false)`
+**Exemple :** `DupedEncounterToPC("Littleroot Town Fishing", 0)`
 
 > **Note sur les fonctionnalités automatiques :**
 > * **Magnet Pull & Static :** Si vous ciblez un emplacement autre que le premier slot, le script vérifie automatiquement le talent du Pokémon en tête de votre équipe. S'il possède Magnet Pull ou Static, le pool de la zone se restreindra (avec 50% de chances) aux types Acier ou Électrique.
@@ -198,7 +198,7 @@ DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
 
 * **`zoneNameInput`** *(string)*: The name of the encounter pool to target (supports permissive keyword search, see full list at the bottom).
 * **`slotTarget`** *(number)*: The active party slot to inject the Pokémon into (1 to 6).
-* **`repelManip`** *(boolean)*: Pass `true` if you want to force the maximum available level of the zone (Repel Manip simulator), otherwise pass `falsekeys`.
+* **`repelManip`** *(boolean)*: Pass `true` if you want to force the maximum available level of the zone (Repel Manip simulator), otherwise pass `false`. It's an optionnal parameter, not putting it won't activate the repel manip (see PC example).
 
 **Example:** `DupedEncounterToParty("Meteor Falls 1F1 Surf", 2, true)`
 
@@ -213,7 +213,7 @@ DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
 
 * **`pcSlotIndex`** *(number)*: The exact index of the target PC slot (0 for the very first case, 1 for the second, etc.).
 
-**Example:** `DupedEncounterToPC("Littleroot Town Fishing", 0, false)`
+**Example:** `DupedEncounterToPC("Littleroot Town Fishing", 0)`
 
 
 > **About automatic function :**
