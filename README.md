@@ -6,27 +6,8 @@ Ce projet est un outil d'injection et de génération de rencontres Pokémon con
 
 Avant de pouvoir utiliser l'outil en jeu, vous devez configurer vos chemins d'accès locaux et générer votre liste personnalisée de doublons.
 
-### 1. Synchronisation des chemins locaux
 
-Après avoir extrait et déplacé le dossier à l'emplacement voulu, ouvrez les fichiers suivants et modifiez la variable `root` pour y renseigner le chemin absolu du dossier de l'application sur votre ordinateur :
-
-#### ! Il est important, comme sur l'exemple, d'utiliser des / entre les dossiers, et non des \ pour le path
-❌ H:\Downloads\Run&Bun\NG+ Encounter Generator\
-✅ H:/Downloads/Run&Bun/NG+ Encounter Generator/
-
-* **Dans `runner.lua`** (Ligne 44) :
-```lua
-local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
-
-```
-
-* **Dans `Run&Bun Tracking Script.lua`** (Ligne 8232) :
-  ```lua
-  local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
-
----
-
-### 2. Génération du fichier `dupes.json`
+### 1. Génération du fichier `dupes.json`
 
 Pour que la clause de doublons fonctionne, le script doit connaître la liste des Pokémon que vous avez déjà capturés lors de vos sessions précédentes.
 
@@ -40,7 +21,7 @@ Pour que la clause de doublons fonctionne, le script doit connaître la liste de
 
 ---
 
-### 3. Gestion avancée des doublons (Optionnel)
+### 2. Gestion avancée des doublons (Optionnel)
 
 Par défaut, l'outil lie l'ensemble des formes régionales au même ID de doublon. Vous pouvez personnaliser ce comportement selon les règles de votre Nuzlocke en modifiant la variable `selectedDupesMode` située à la **ligne 174 du fichier `runner.lua**` :
 
@@ -61,6 +42,33 @@ Vous pouvez remplacer `"dupe both"` par l'une des **3 configurations suivantes**
 * **`"neither"`** : Toutes les formes régionales et leurs évolutions exclusives sont considérées comme des lignées totalement indépendantes. Capturer une forme d'Alola, de Galar ou d'Hisui ne bloque pas la forme classique.
 * *Exemple :* Pour `"Raichu-Alola"`, capturer un Raichu normal ne vous empêchera pas de tomber sur la variante d'Alola.
 
+---
+
+### 3. Synchronisation des chemins locaux (Optionnel / Secours)
+
+> **Note importante :** Le script intègre désormais un système de détection automatique de votre dossier. **Vous n'avez pas besoin de modifier les chemins manuellement par défaut.**
+>
+> Effectuez la manipulation ci-dessous **UNIQUEMENT** si, lors du lancement du script dans mGBA, vous obtenez l'erreur suivante dans la console :
+> `Impossible de détecter le dossier automatiquement` suivie d'un crash `cannot open nil...`.
+
+Si (et seulement si) la détection automatique échoue, ouvrez les fichiers suivants et modifiez la variable `root` pour y renseigner manuellement le chemin absolu du dossier de l'application sur votre ordinateur :
+
+#### ! Il est important, comme sur l'exemple, d'utiliser des / entre les dossiers, et non des \ pour le path
+❌ H:\Downloads\Run&Bun\NG+ Encounter Generator\
+✅ H:/Downloads/Run&Bun/NG+ Encounter Generator/
+
+* **Dans `runner.lua`** (Ligne 44) :
+```lua
+local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
+
+```
+
+* **Dans `Run&Bun Tracking Script.lua`** (Ligne 8232) :
+
+```lua
+local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
+
+```
 
 ---
 
@@ -118,29 +126,7 @@ This project is an injection and encounter generation tool designed specifically
 
 Before running the tool in-game, you must configure your local folder paths and generate your personalized dupes file.
 
-### 1. Synchronizing Local Directory Paths
-
-After extracting and moving the folder to the desired location, open the following files and edit the `root` variable to match the absolute directory path of the tool on your computer:
-
-
-#### ! It is a must, like the example, to use / between folder instead of \ for the path
-❌ H:\Downloads\Run&Bun\NG+ Encounter Generator\
-✅ H:/Downloads/Run&Bun/NG+ Encounter Generator/
-
-* **Inside `runner.lua`** (Line 44):
-```lua
-  local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
-
-```
-
-* **Inside `Run&Bun Tracking Script.lua`** (Line 8232):
-
-```lua
-  local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
-
-```
-
-### 2. Generating the `dupes.json` File
+### 1. Generating the `dupes.json` File
 
 For the dupe clause to function correctly, the script requires the list of Pokémon you have already caught in your previous playthroughs.
 
@@ -154,7 +140,7 @@ For the dupe clause to function correctly, the script requires the list of Poké
 
 ---
 
-### 3. Advanced Dupes Configuration (Optional)
+### 2. Advanced Dupes Configuration (Optional)
 
 By default, the generator locks regional forms under the same dupe family as their base form. You can adjust this to your custom Nuzlocke rules by changing the `selectedDupesMode` value at **line 174 inside `runner.lua**`:
 
@@ -177,6 +163,33 @@ You can set it to one of these **3 valid choices**:
 * **`"neither"`**: Every regional variant and variant evolution line is treated completely independently from its vanilla counterpart.
 * *Example :* Catching a standard Kanto Raichu won't prevent the Alolan variant from appearing.
 
+---
+### 3. Synchronizing Local Directory Paths (Optional / Fallback)
+
+> **Important Note:** The script now includes an automatic folder path detection system. **You do not need to manually edit paths by default.**
+> Follow the steps below **ONLY** if you encounter the following error message inside the mGBA script console when launching the tool:
+> `Impossible de détecter le dossier automatiquement` followed by a `cannot open nil...` crash.
+
+If (and only if) the auto-detection fails, open the following files and manually edit the `root` variable to match the absolute directory path of the tool on your computer:
+
+#### ! It is a must, like the example, to use / between folder instead of \ for the path
+
+❌ H:\Downloads\Run&Bun\NG+ Encounter Generator
+✅ H:/Downloads/Run&Bun/NG+ Encounter Generator/
+
+* **Inside `runner.lua`** (Line 44):
+
+```lua
+local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
+
+```
+
+* **Inside `Run&Bun Tracking Script.lua`** (Line 8232):
+
+```lua
+local root = "H:/Downloads/Run&Bun/NG+ Encounter Generator/"
+
+```
 ---
 
 ## 🎮 In-Game Usage
