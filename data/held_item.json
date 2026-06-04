@@ -1,0 +1,361 @@
+{
+  "Surskit": [
+    { "item": "Honey", "probability": "5%" }
+  ],
+  "Skitty": [
+    { "item": "Moon Stone", "probability": "100%" }
+  ],
+  "Salandit": [
+    { "item": "Smoke Ball", "probability": "5%" }
+  ],
+  "Salazzzle": [
+    { "item": "Smoke Ball", "probability": "5%" }
+  ],
+  "Budew": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Roserade": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Tentacool": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Tentacruel": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Chinchou": [
+    { "item": "Deep Sea Scale", "probability": "5%" }
+  ],
+  "Lantern": [
+    { "item": "Deep Sea Scale", "probability": "5%" }
+  ],
+  "Abra": [
+    { "item": "Twisted Spoon", "probability": "5%" }
+  ],
+  "Kadabra": [
+    { "item": "Twisted Spoon", "probability": "5%" }
+  ],
+  "Alakazam": [
+    { "item": "Twisted Spoon", "probability": "5%" }
+  ],
+  "Carvanha": [
+    { "item": "Deep Sea Tooth", "probability": "5%" }
+  ],
+  "Sharpedo": [
+    { "item": "Deep Sea Tooth", "probability": "5%" }
+  ],
+  "Paras": [
+    { "item": "Tiny Mushroom", "probability": "50%" },
+    { "item": "Big Mushroom", "probability": "50%" }
+  ],
+  "Parasect": [
+    { "item": "Tiny Mushroom", "probability": "50%" },
+    { "item": "Big Mushroom", "probability": "50%" }
+  ],
+  "Venipede": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Scolipede": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Combee": [
+    { "item": "Honey", "probability": "5%" }
+  ],
+  "Vespiqueen": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Horsea": [
+    { "item": "Dragon Scale", "probability": "5%" }
+  ],
+  "Seadra": [
+    { "item": "Dragon Scale", "probability": "5%" }
+  ],
+  "Kingdra": [
+    { "item": "Dragon Scale", "probability": "5%" }
+  ],
+  "Staryu": [
+    { "item": "Star Dust", "probability": "50%" },
+    { "item": "Star Piece", "probability": "50%" }
+  ],
+  "Starmie": [
+    { "item": "Star Dust", "probability": "50%" },
+    { "item": "Star Piece", "probability": "50%" }
+  ],
+  "Makuhita": [
+    { "item": "Black Belt", "probability": "5%" }
+  ],
+  "Hariyama": [
+    { "item": "King's Rock", "probability": "5%" }
+  ],
+  "Farfetch'd-G": [
+    { "item": "Leek", "probability": "50%" }
+  ],
+  "Sirfetch'd": [
+    { "item": "Leek", "probability": "5%" }
+  ],
+  "Shellder": [
+    { "item": "Pearl", "probability": "50%" },
+    { "item": "Big Pearl", "probability": "50%" }
+  ],
+  "Cloyster": [
+    { "item": "Pearl", "probability": "50%" },
+    { "item": "Big Pearl", "probability": "50%" }
+  ],
+  "Aron": [
+    { "item": "Hard Stone", "probability": "5%" }
+  ],
+  "Lairon": [
+    { "item": "Hard Stone", "probability": "5%" }
+  ],
+  "Aggron": [
+    { "item": "Hard Stone", "probability": "5%" }
+  ],
+  "Sandile": [
+    { "item": "Black Glasses", "probability": "5%" }
+  ],
+  "Krokorok": [
+    { "item": "Black Glasses", "probability": "5%" }
+  ],
+  "Krookodile": [
+    { "item": "Black Glasses", "probability": "50%" }
+  ],
+  "Dwebble": [
+    { "item": "Hard Stone", "probability": "5%" }
+  ],
+  "Crustle": [
+    { "item": "Hard Stone", "probability": "5%" }
+  ],
+  "Nosepass": [
+    { "item": "Magnet", "probability": "5%" }
+  ],
+  "Probopass": [
+    { "item": "Magnet", "probability": "5%" }
+  ],
+  "Sandshrew-A": [
+    { "item": "Grip Claw", "probability": "5%" }
+  ],
+  "Snover": [
+    { "item": "Never Melt Ice", "probability": "5%" }
+  ],
+  "Abomasnow": [
+    { "item": "Never Melt Ice", "probability": "5%" }
+  ],
+  "Snorunt": [
+    { "item": "Snowball", "probability": "5%" }
+  ],
+  "Magnemite": [
+    { "item": "Metal Coat", "probability": "5%" }
+  ],
+  "Magneton": [
+    { "item": "Metal Coat", "probability": "5%" }
+  ],
+  "Magnezone": [
+    { "item": "Metal Coat", "probability": "5%" }
+  ],
+  "Qwilfish": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Lileep": [
+    { "item": "Big Root", "probability": "5%" }
+  ],
+  "Cradily": [
+    { "item": "Big Root", "probability": "5%" }
+  ],
+  "Slowpoke": [
+    { "item": "Lagging Tail", "probability": "5%" }
+  ],
+  "Slowbro": [
+    { "item": "Lagging Tail", "probability": "5%" }
+  ],
+  "Slowking": [
+    { "item": "King's Rock", "probability": "5%" }
+  ],
+  "Shroomish": [
+    { "item": "Tiny Mushroom", "probability": "50%" },
+    { "item": "Big Mushroom", "probability": "50%" }
+  ],
+  "Breloom": [
+    { "item": "Tiny Mushroom", "probability": "50%" },
+    { "item": "Big Mushroom", "probability": "50%" }
+  ],
+  "Clamperl": [
+    { "item": "Pearl", "probability": "50%" },
+    { "item": "Big Pearl", "probability": "50%" }
+  ],
+  "Basculin": [
+    { "item": "Deep Sea Tooth", "probability": "5%" }
+  ],
+  "Munna": [
+    { "item": "Moon Stone", "probability": "100%" }
+  ],
+  "Trapinch": [
+    { "item": "Soft Sand", "probability": "5%" }
+  ],
+  "Roggenrola": [
+    { "item": "Everstone", "probability": "50%" },
+    { "item": "Hard Stone", "probability": "50%" }
+  ],
+  "Boldore": [
+    { "item": "Everstone", "probability": "50%" },
+    { "item": "Hard Stone", "probability": "50%" }
+  ],
+  "Gigalith": [
+    { "item": "Everstone", "probability": "50%" },
+    { "item": "Hard Stone", "probability": "50%" }
+  ],
+  "Foongus": [
+    { "item": "Tiny Mushroom", "probability": "50%" },
+    { "item": "Big Mushroom", "probability": "50%" }
+  ],
+  "Amoonguss": [
+    { "item": "Tiny Mushroom", "probability": "50%" },
+    { "item": "Big Mushroom", "probability": "50%" }
+  ],
+  "Pikachu": [
+    { "item": "Light Ball", "probability": "5%" }
+  ],
+  "Stunfisk": [
+    { "item": "Soft Sand", "probability": "5%" }
+  ],
+  "Maractus": [
+    { "item": "Miracle Seed", "probability": "5%" }
+  ],
+  "Beedrill": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Dewpider": [
+    { "item": "Mystic Water", "probability": "5%" }
+  ],
+  "Araquanid": [
+    { "item": "Mystic Water", "probability": "5%" }
+  ],
+  "Torkoal": [
+    { "item": "Charcoal", "probability": "5%" }
+  ],
+  "Skorupi": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Drapion": [
+    { "item": "Poison Barb", "probability": "5%" }
+  ],
+  "Koffing": [
+    { "item": "Smoke Ball", "probability": "5%" }
+  ],
+  "Weezing": [
+    { "item": "Smoke Ball", "probability": "5%" }
+  ],
+  "Clefairy": [
+    { "item": "Moon Stone", "probability": "5%" }
+  ],
+  "Clefable": [
+    { "item": "Moon Stone", "probability": "5%" }
+  ],
+  "Druddigon": [
+    { "item": "Dragon Fang", "probability": "5%" }
+  ],
+  "Cutiefly": [
+    { "item": "Honey", "probability": "5%" }
+  ],
+  "Ribombee": [
+    { "item": "Honey", "probability": "5%" }
+  ],
+  "Steelix": [
+    { "item": "Metal Coat", "probability": "5%" }
+  ],
+  "Beldum": [
+    { "item": "Metal Coat", "probability": "5%" }
+  ],
+  "Metang": [
+    { "item": "Metal Coat", "probability": "5%" }
+  ],
+  "Metagross": [
+    { "item": "Metal Coat", "probability": "5%" }
+  ],
+  "Jangmo-o": [
+    { "item": "Razor Claw", "probability": "5%" }
+  ],
+  "Hakamo-o": [
+    { "item": "Razor Claw", "probability": "5%" }
+  ],
+  "Kommo-o": [
+    { "item": "Razor Claw", "probability": "50%" }
+  ],
+  "Dratini": [
+    { "item": "Dragon Scale", "probability": "5%" }
+  ],
+  "Dragonair": [
+    { "item": "Dragon Scale", "probability": "5%" }
+  ],
+  "Dragonite": [
+    { "item": "Dragon Scale", "probability": "5%" }
+  ],
+  "Relicanth": [
+    { "item": "Deep Sea Scale", "probability": "5%" }
+  ],
+  "Bagon": [
+    { "item": "Dragon Fang", "probability": "5%" }
+  ],
+  "Shelgon": [
+    { "item": "Dragon Fang", "probability": "5%" }
+  ],
+  "Salamence": [
+    { "item": "Dragon Fang", "probability": "5%" }
+  ],
+  "Turtonator": [
+    { "item": "Charcoal", "probability": "5%" }
+  ],
+  "Magby": [
+    { "item": "Magmarizer", "probability": "5%" }
+  ],
+  "Magmar": [
+    { "item": "Magmarizer", "probability": "5%" }
+  ],
+  "Magmortar": [
+    { "item": "Magmarizer", "probability": "5%" }
+  ],
+  "Elekid": [
+    { "item": "Electirizer", "probability": "5%" }
+  ],
+  "Electabuzz": [
+    { "item": "Electirizer", "probability": "5%" }
+  ],
+  "Electivire": [
+    { "item": "Electirizer", "probability": "5%" }
+  ],
+  "Audino": [
+    { "item": "Oran Berry", "probability": "50%" },
+    { "item": "Sitrus Berry", "probability": "50%" }
+  ],
+  "Hawlucha": [
+    { "item": "King's Rock", "probability": "5%" }
+  ],
+  "Kecleon": [
+    { "item": "Shed Shell", "probability": "100%" }
+  ],
+  "Volcarona": [
+    { "item": "Silverpowder", "probability": "100%" }
+  ],
+  "Huntail": [
+    { "item": "Deep Sea Tooth", "probability": "5%" }
+  ],
+  "Gorebyss": [
+    { "item": "Deep Sea Scale", "probability": "5%" }
+  ],
+  "Morelull": [
+    { "item": "Tiny Mushroom", "probability": "50%" },
+    { "item": "Big Mushroom", "probability": "50%" }
+  ],
+  "Shiinotic": [
+    { "item": "Tiny Mushroom", "probability": "50%" },
+    { "item": "Big Mushroom", "probability": "50%" }
+  ],
+  "Shuppet": [
+    { "item": "Spell Tag", "probability": "5%" }
+  ],
+  "Banette": [
+    { "item": "Spell Tag", "probability": "5%" }
+  ],
+  "Pumpkaboo - Super": [
+    { "item": "Miracle Seed", "probability": "100%" }
+  ]
+}
