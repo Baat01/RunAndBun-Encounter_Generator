@@ -9882,9 +9882,9 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
         randomNature,         -- Nature
         randomIVs,            -- Tableau de 6 IVs
         {1, 2, 3, 4},         -- Index des emplacements de moves
-        moveIDs,              -- Tableau contenant les 4 IDs numériques des attaques (corrigé)
+        {movesToLearn[1],movesToLearn[2],movesToLearn[3],movesToLearn[4]},              -- Tableau contenant les 4 IDs numériques des attaques (corrigé)
         finalLevel,           -- Niveau numérique
-        speciesID,            -- ID numérique de l'espèce (corrigé)
+        pokemonName,            -- ID numérique de l'espèce (corrigé)
         selectedAbilityNum,   -- Talent (0 ou 1)
         nil                   -- Aucun objet tenu
     )
