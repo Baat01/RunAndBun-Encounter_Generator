@@ -166,6 +166,7 @@ local staticUsers        = loadJSON(join(dataDir, "static.json"))
 local magnetPullUsers    = loadJSON(join(dataDir, "magnet_pull.json"))
 local zonesData          = loadJSON(join(dataDir, "zones.json"))
 local typesData          = loadJSON(join(dataDir, "types.json"))
+local itemData           = loadJSON(join(dataDir, "held_item.json"))
 
 -- 🌟 NOUVEAU : Chargement de la liste des Pokémon déjà capturés par le joueur
 local playerDupes        = loadJSON(join(dataDir, "dupes.json"))
@@ -201,6 +202,7 @@ GLOBAL_DATA = {
   zones               = zonesData,
   types               = typesData,
   learnset            = learnsetData,
+  held_item  	      = itemData,
   player_dupes        = playerDupes
 }
 

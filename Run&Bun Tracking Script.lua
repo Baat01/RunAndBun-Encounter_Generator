@@ -7801,7 +7801,7 @@ charmap = {
     "ñ",
     "º",
     "ª",
-    "�",
+    " ",
     "&",
     "+",
     "あ",
@@ -7844,9 +7844,9 @@ charmap = {
     "M" .. utf8.char(0x200d) .. "n",
     "P" .. utf8.char(0x200d) .. "o",
     "K" .. utf8.char(0x200d) .. "é",
-    "�",
-    "�",
-    "�",
+    " ",
+    " ",
+    " ",
     "Í",
     "%",
     "(",
@@ -8007,11 +8007,11 @@ charmap = {
     "⬆",
     "⬇",
     "⬅",
-    "�",
-    "�",
-    "�",
-    "�",
-    "�",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
     ""
 }
 
@@ -9139,6 +9139,34 @@ function printPartyStatus(buffer, level, mode)
     end
 end
 
+function addItem(mon)
+    local str = "" -- Utilise 'local' pour ne pas polluer l'espace global
+    local ability = getAbility(mon)
+    
+    -- 1. Test des talents prioritaires
+    if poisonAbility[ability] then
+        str = str .. " @ Toxic Orb"
+    elseif burnAbility[ability] then
+        str = str .. " @ Flame Orb"
+    else
+        -- 2. Test des attaques si aucun talent n'a matché
+        for i = 1, 4 do
+            local move_id = mon.moves[i]
+            -- On vérifie que le move existe (différent de 0 ou -1 selon ton moteur)
+            if move_id and move_id > 0 then 
+                local mv = move[move_id + 1]
+                if poisonMove[mv] then
+                    str = str .. " @ Toxic Orb"
+                    break -- On sort de la boucle for immédiatement
+                end
+            end
+        end
+    end
+    
+    return str
+end
+
+
 function getPartyPrint(mon, level, mode)
     local str = ""
     if mons[mon.species] == nil then
@@ -9725,7 +9753,8 @@ end
 --- @param zoneNameInput string Nom ou partie du nom de la zone (ex: "Littleroot Town Fishing")
 --- @param pcSlotIndex number Index de l'emplacement PC cible (0, 1, 2, ...)
 --- @param repelManip boolean|nil (Optionnel) Force le niveau max si true
-function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
+--- @param duping boolean|nil (Optionnel) Rajoute le pokémon généré dans la table de dupe si true
+function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip,duping)
     -- 1. Recherche de la zone dans ton dictionnaire de données
     local currentZoneData = nil
     local sourceZones = zonesToRoll or (data and data.zones)
@@ -9834,6 +9863,50 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
         for i = 1, math.min(4, #validMoves) do table.insert(movesToLearn, validMoves[i].name) end
     end
 
+    -- 🌟 5.5 CALCUL DE L'OBJET TENU (HELD ITEM)
+    local chosenItem = nil
+    local itemTable = data and data.held_item and data.held_item[pokemonName]
+    
+    if itemTable then
+        -- Vérification du talent Compound Eyes sur le Pokémon en slot 1
+        local boostedProbability = false
+        if slotTarget > 1 then
+            local firstMonAddress = getSlotAddress(1)
+            if firstMonAddress and emu:read32(firstMonAddress) ~= 0 then
+                local firstMon = readPartyMon(firstMonAddress)
+                local firstMonAbility = getAbility(firstMon)
+                if firstMonAbility == "Compound Eyes" or firstMonAbility == "Super Luck"  then
+                    boostedProbability = true
+                end
+            end
+        end
+
+        local roll = math.random(1, 100)
+        local currentThreshold = 0
+        
+        for _, itemInfo in ipairs(itemTable) do
+            -- Extrait le nombre de la chaîne (ex: "5%" -> 5, "100%" -> 100)
+            local chance = tonumber(itemInfo.probability:match("%d+")) or 0
+            
+            -- Si Compound Eyes est actif, on applique le barème officiel :
+            -- 50% -> 60%  |  5% -> 20%  |  1% -> 5%
+            if boostedProbability then
+                local originalChance = chance
+                if chance == 50 then
+                    chance = 60
+                elseif chance == 5 then
+                    chance = 20
+                elseif chance == 1 then
+                    chance = 5
+                end
+                
+                -- Petit log d'info si la probabilité a effectivement été modifiée
+                if chance ~= originalChance and not string.find(itemInfo.probability, "boosted") then
+                    console:log(string.format("[INFO] Compound Eyes / Super Luck ! Taux de %s augmenté : %d%% -> %d%%", itemInfo.item, originalChance, chance))
+                end
+            end
+    end
+
     -- 6. Génération de la nature et des IVs aléatoires
     local randomNature = nature[math.random(1, #nature)]
     
@@ -9884,10 +9957,16 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip)
         {1, 2, 3, 4},         -- Index des emplacements de moves
         {movesToLearn[1],movesToLearn[2],movesToLearn[3],movesToLearn[4]},              -- Tableau contenant les 4 IDs numériques des attaques (corrigé)
         finalLevel,           -- Niveau numérique
-        pokemonName,            -- ID numérique de l'espèce (corrigé)
+        pokemonName,          -- Nom de l'espèce
         selectedAbilityNum,   -- Talent (0 ou 1)
-        nil                   -- Aucun objet tenu
+        chosenItem            -- Aucun objet tenu
     )
+
+    if duping == true then
+        if data and data.player_dupes then
+            table.insert(data.player_dupes, pokemonName)
+    	end
+    end
 
     -- 10. Journalisation claire du succès dans la console
     console:log("=====================================================")
@@ -9912,7 +9991,8 @@ end
 --- @param zoneNameInput string Nom ou partie du nom de la zone (ex: "Littleroot Town Fishing")
 --- @param pcSlotIndex number Index de l'emplacement PC cible (0, 1, 2, ...)
 --- @param repelManip boolean|nil (Optionnel) Force le niveau max si true
-function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
+--- @param duping boolean|nil (Optionnel) Rajoute le pokémon généré dans la table de dupe si true
+function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip,duping)
     if slotTarget < 1 or slotTarget > 6 then
         console:log("[ERREUR] Le slot de l'équipe doit être compris entre 1 et 6.")
         return false
@@ -10045,6 +10125,50 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
     for i = 1, 6 do randomIVs[i] = math.random(0, 31) end
     local selectedAbilityNum = math.random(0, 1)
 
+    -- 🌟 5.5 CALCUL DE L'OBJET TENU (HELD ITEM)
+    local chosenItem = nil
+    local itemTable = data and data.held_item and data.held_item[pokemonName]
+    
+    if itemTable then
+        -- Vérification du talent Compound Eyes sur le Pokémon en slot 1
+        local boostedProbability = false
+        if slotTarget > 1 then
+            local firstMonAddress = getSlotAddress(1)
+            if firstMonAddress and emu:read32(firstMonAddress) ~= 0 then
+                local firstMon = readPartyMon(firstMonAddress)
+                local firstMonAbility = getAbility(firstMon)
+                if firstMonAbility == "Compound Eyes" or firstMonAbility == "Super Luck"  then
+                    boostedProbability = true
+                end
+            end
+        end
+
+        local roll = math.random(1, 100)
+        local currentThreshold = 0
+        
+        for _, itemInfo in ipairs(itemTable) do
+            -- Extrait le nombre de la chaîne (ex: "5%" -> 5, "100%" -> 100)
+            local chance = tonumber(itemInfo.probability:match("%d+")) or 0
+            
+            -- Si Compound Eyes est actif, on applique le barème officiel :
+            -- 50% -> 60%  |  5% -> 20%  |  1% -> 5%
+            if boostedProbability then
+                local originalChance = chance
+                if chance == 50 then
+                    chance = 60
+                elseif chance == 5 then
+                    chance = 20
+                elseif chance == 1 then
+                    chance = 5
+                end
+                
+                -- Petit log d'info si la probabilité a effectivement été modifiée
+                if chance ~= originalChance and not string.find(itemInfo.probability, "boosted") then
+                    console:log(string.format("[INFO] Compound Eyes / Super Luck ! Taux de %s augmenté : %d%% -> %d%%", itemInfo.item, originalChance, chance))
+                end
+            end
+    end
+
     -- 6. Conversion en IDs et écriture mémoire
     local speciesID = nil
     if mons then
@@ -10055,11 +10179,17 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
     if not speciesID then speciesID = 1 end
 
     local targetAddress = getSlotAddress(slotTarget)
-    setBoxMon(targetAddress, randomNature, randomIVs, nil, nil, finalLevel, pokemonName, selectedAbilityNum, nil)
+    setBoxMon(targetAddress, randomNature, randomIVs, nil, nil, finalLevel, pokemonName, selectedAbilityNum, chosenItem)
 
     for moveSlot = 1, 4 do
         local assignedMove = movesToLearn[moveSlot] or "None"
         setMove(slotTarget, moveSlot, assignedMove)
+    end
+
+    if duping == true then
+        if data and data.player_dupes then
+            table.insert(data.player_dupes, pokemonName)
+    	end
     end
 
     console:log("=====================================================")
@@ -10071,6 +10201,16 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip)
     console:log(string.format("Attaques        : %s", #movesToLearn > 0 and table.concat(movesToLearn, ", ") or "Aucune"))
     console:log("=====================================================")
 
+    return true
+end
+
+function DupedEncounterToPCDuping(zoneNameInput, pcSlotIndex, repelManip)
+    DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip,True)
+    return true
+end
+
+function DupedEncounterToPartyDuping(zoneNameInput, pcSlotIndex, repelManip)
+    DupedEncounterToParty(zoneNameInput, pcSlotIndex, repelManip,True)
     return true
 end
 
@@ -10125,7 +10265,7 @@ function export(level)
         console:log("error party buffer")
         return
     end
-    printPartyStatus(partyBuffer) -- Le script actuel ne prend pas en charge level/mode ici
+    printPartyStatus(partyBuffer,level,0)
     if not hiddenBuffer then
         console:log("error hidden buffer")
         return
@@ -10144,7 +10284,7 @@ function exportItem(level)
         console:log("error party buffer")
         return
     end
-    printPartyStatus(partyBuffer)
+    printPartyStatus(partyBuffer,level,1)
     if not hiddenBuffer then
         console:log("error hidden buffer")
         return
@@ -10158,12 +10298,14 @@ function exportItem(level)
     exportFull(killCounterBuffer)
 end
 
+
+
 function exportStatus(level)
     if not partyBuffer then
         console:log("error party buffer")
         return
     end
-    printPartyStatus(partyBuffer)
+    printPartyStatus(partyBuffer,level,2)
     if not hiddenBuffer then
         console:log("error hidden buffer")
         return
