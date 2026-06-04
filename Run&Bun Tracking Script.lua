@@ -9868,14 +9868,12 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip,duping)
     if itemTable then
         -- Vérification du talent Compound Eyes sur le Pokémon en slot 1
         local boostedProbability = false
-        if slotTarget > 1 then
-            local firstMonAddress = getSlotAddress(1)
-            if firstMonAddress and emu:read32(firstMonAddress) ~= 0 then
-                local firstMon = readPartyMon(firstMonAddress)
-                local firstMonAbility = getAbility(firstMon)
-                if firstMonAbility == "Compound Eyes" or firstMonAbility == "Super Luck"  then
-                    boostedProbability = true
-                end
+        local firstMonAddress = getSlotAddress(1)
+        if firstMonAddress and emu:read32(firstMonAddress) ~= 0 then
+            local firstMon = readPartyMon(firstMonAddress)
+            local firstMonAbility = getAbility(firstMon)
+            if firstMonAbility == "Compound Eyes" or firstMonAbility == "Super Luck"  then
+                 boostedProbability = true
             end
         end
 
@@ -9903,6 +9901,7 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip,duping)
                     console:log(string.format("[INFO] Compound Eyes / Super Luck ! Taux de %s augmenté : %d%% -> %d%%", itemInfo.item, originalChance, chance))
                 end
             end
+        end
     end
 
     -- 6. Génération de la nature et des IVs aléatoires
@@ -9990,7 +9989,7 @@ end
 --- @param pcSlotIndex number Index de l'emplacement PC cible (0, 1, 2, ...)
 --- @param repelManip boolean|nil (Optionnel) Force le niveau max si true
 --- @param duping boolean|nil (Optionnel) Rajoute le pokémon généré dans la table de dupe si true
-function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip,duping)
+function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip, duping)
     if slotTarget < 1 or slotTarget > 6 then
         console:log("[ERREUR] Le slot de l'équipe doit être compris entre 1 et 6.")
         return false
@@ -10165,6 +10164,7 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip,duping)
                     console:log(string.format("[INFO] Compound Eyes / Super Luck ! Taux de %s augmenté : %d%% -> %d%%", itemInfo.item, originalChance, chance))
                 end
             end
+        end
     end
 
     -- 6. Conversion en IDs et écriture mémoire
@@ -10203,12 +10203,12 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip,duping)
 end
 
 function DupedEncounterToPCDuping(zoneNameInput, pcSlotIndex, repelManip)
-    DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip,True)
+    DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip,true)
     return true
 end
 
 function DupedEncounterToPartyDuping(zoneNameInput, pcSlotIndex, repelManip)
-    DupedEncounterToParty(zoneNameInput, pcSlotIndex, repelManip,True)
+    DupedEncounterToParty(zoneNameInput, pcSlotIndex, repelManip, true)
     return true
 end
 
