@@ -25,10 +25,10 @@ Pour que la clause de doublons fonctionne, le script doit connaître la liste de
 
 ### 2. Gestion avancée des doublons (Optionnel)
 
-Par défaut, l'outil lie l'ensemble des formes régionales au même ID de doublon. Vous pouvez personnaliser ce comportement selon les règles de votre Nuzlocke en modifiant la variable `selectedDupesMode` située à la **ligne 174 du fichier `runner.lua**` :
+Par défaut, l'outil lie l'ensemble des formes régionales au même ID de doublon. Vous pouvez personnaliser ce comportement selon les règles de votre Nuzlocke en modifiant la variable `selectedDupesMode` située à la **ligne 183 du fichier `runner.lua`** :
 
 ```lua
--- À la ligne 184 de runner.lua
+-- À la ligne 183 de runner.lua
 local selectedDupesMode  = "dupe both" 
 
 ```
@@ -144,10 +144,10 @@ For the dupe clause to function correctly, the script requires the list of Poké
 
 ### 2. Advanced Dupes Configuration (Optional)
 
-By default, the generator locks regional forms under the same dupe family as their base form. You can adjust this to your custom Nuzlocke rules by changing the `selectedDupesMode` value at **line 174 inside `runner.lua**`:
+By default, the generator locks regional forms under the same dupe family as their base form. You can adjust this to your custom Nuzlocke rules by changing the `selectedDupesMode` value at **line 183 inside `runner.lua`**:
 
 ```lua
--- On line 184 of runner.lua
+-- On line 183 of runner.lua
 local selectedDupesMode  = "dupe both" 
 
 ```
