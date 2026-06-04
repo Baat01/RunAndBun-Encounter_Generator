@@ -8256,8 +8256,6 @@ pokemonTypes      = data.types               -- Contient la table typesData
 pokemonLearnset  = data.learnset            -- Contient la table learnsetData
 dupesFamily       = data.dupes_family
 dupesRegional     = data.dupes_regional
-magnetPullUsers   = data.magnet_pull_users
-staticUsers       = data.static_users
 
 -- =====================================================
 -- Runner.lua : charge les fichiers JSON/CSV et prépare le randomizer

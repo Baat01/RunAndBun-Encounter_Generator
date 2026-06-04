@@ -162,8 +162,6 @@ console:log("Chargement des fichiers JSON...")
 
 local dupesFamily        = loadJSON(join(dataDir, "dupes_family.json"))
 local dupesRegional      = loadJSON(join(dataDir, "dupes_regionnal_variant.json"))
-local staticUsers        = loadJSON(join(dataDir, "static.json"))
-local magnetPullUsers    = loadJSON(join(dataDir, "magnet_pull.json"))
 local zonesData          = loadJSON(join(dataDir, "zones.json"))
 local typesData          = loadJSON(join(dataDir, "types.json"))
 local itemData           = loadJSON(join(dataDir, "held_item.json"))
@@ -197,8 +195,6 @@ GLOBAL_SETTINGS = {
 GLOBAL_DATA = {
   dupes_family        = dupesFamily,
   dupes_regional      = dupesRegional,
-  static_users        = staticUsers,
-  magnet_pull_users   = magnetPullUsers,
   zones               = zonesData,
   types               = typesData,
   learnset            = learnsetData,
