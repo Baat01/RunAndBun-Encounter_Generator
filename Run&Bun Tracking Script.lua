@@ -10180,7 +10180,7 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip, duping)
     setBoxMon(targetAddress, randomNature, randomIVs, nil, nil, finalLevel, pokemonName, selectedAbilityNum, chosenItem)
 
     for moveSlot = 1, 4 do
-        local assignedMove = movesToLearn[moveSlot] or "None"
+        local assignedMove = movesToLearn[moveSlot] or nil
         setMove(slotTarget, moveSlot, assignedMove)
     end
 
