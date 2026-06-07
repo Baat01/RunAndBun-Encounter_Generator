@@ -9901,6 +9901,13 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip,duping)
                     console:log(string.format("[INFO] Compound Eyes / Super Luck ! Taux de %s augmenté : %d%% -> %d%%", itemInfo.item, originalChance, chance))
                 end
             end
+            
+            -- On génère un nombre entre 1 et 100 pour CET objet précis
+            local roll = math.random(1, 100)
+            if roll <= chance then
+                chosenItem = itemInfo.item
+                break -- On a trouvé un objet, on arrête de chercher dans la table
+            end
         end
     end
 
@@ -10163,6 +10170,12 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip, duping)
                 if chance ~= originalChance and not string.find(itemInfo.probability, "boosted") then
                     console:log(string.format("[INFO] Compound Eyes / Super Luck ! Taux de %s augmenté : %d%% -> %d%%", itemInfo.item, originalChance, chance))
                 end
+            end
+            -- On génère un nombre entre 1 et 100 pour CET objet précis
+            local roll = math.random(1, 100)
+            if roll <= chance then
+                chosenItem = itemInfo.item
+                break -- On a trouvé un objet, on arrête de chercher dans la table
             end
         end
     end
