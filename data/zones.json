@@ -32,7 +32,7 @@
         { "name": "Pidgey",  "rate": 5, "level": { "min": 2, "max": 3} },
         { "name": "Litleo",  "rate": 5, "level": { "min": 2, "max": 3} },
         { "name": "Deerling",  "rate": 4, "level": { "min": 2, "max": 3} },
-        { "name": "Deerling-Alola",  "rate": 1, "level": { "min": 2, "max": 3} }
+        { "name": "Deerling",  "rate": 1, "level": { "min": 2, "max": 3} }
     ],
 
     "Oldale Town Land": [
@@ -62,7 +62,7 @@
         { "name": "Budew",  "rate": 5, "level": { "min": 2, "max": 3}},
         { "name": "Seedot",  "rate": 5, "level": { "min": 2, "max": 3} },
         { "name": "Deerling",  "rate": 4, "level": { "min": 2, "max": 3} },
-        { "name": "Deerling-S",  "rate": 1, "level": { "min": 2, "max": 3} }
+        { "name": "Deerling",  "rate": 1, "level": { "min": 2, "max": 3} }
     ],
 
     "Route 103 Fishing": [
@@ -1072,7 +1072,7 @@
         { "name": "Hawlucha", "rate": 20, "level": 55 },
         { "name": "Gligar", "rate": 10, "level": { "min": 5, "max": 55 } },
         { "name": "Gliscor", "rate": 10, "level": 55 },
-        { "name": "Sneasel-H", "rate": 10, "level": { "min": 5, "max": 55 } },
+        { "name": "Sneasel-Hisui", "rate": 10, "level": { "min": 5, "max": 55 } },
         { "name": "Sneasler", "rate": 10, "level": 55 },
         { "name": "Mienshao", "rate": 10, "level": 55 },
         { "name": "Bewear", "rate": 10, "level": 55 },
@@ -1144,7 +1144,7 @@
         { "name": "Hawlucha", "rate": 20, "level": 55 },
         { "name": "Gligar", "rate": 10, "level": { "min": 5, "max": 55 } },
         { "name": "Gliscor", "rate": 10, "level": 55 },
-        { "name": "Sneasel-H", "rate": 10, "level": { "min": 5, "max": 55 } },
+        { "name": "Sneasel-Hisui", "rate": 10, "level": { "min": 5, "max": 55 } },
         { "name": "Sneasler", "rate": 10, "level": 55 },
         { "name": "Mienshao", "rate": 10, "level": 55 },
         { "name": "Bewear", "rate": 10, "level": 55 },
@@ -1163,17 +1163,17 @@
         { "name": "Gyarados", "rate": 10, "level": 55 },
         { "name": "Gyarados", "rate": 10, "level": 55 },
         { "name": "Jellicent", "rate": 10, "level": 55 },
-        { "name": "Qwilfish-H", "rate": 5, "level": { "min": 5, "max": 55 } },
-        { "name": "Grimer-A", "rate": 4, "level": { "min": 5, "max": 55 } },
-        { "name": "Muk-A", "rate": 1, "level": 55 }
+        { "name": "Qwilfish-Hisui", "rate": 5, "level": { "min": 5, "max": 55 } },
+        { "name": "Grimer-Alola", "rate": 4, "level": { "min": 5, "max": 55 } },
+        { "name": "Muk-Alola", "rate": 1, "level": 55 }
     ],
 
     "Scorched Slab Surf": [
         { "name": "Overqwil", "rate": 30, "level": 55 },
         { "name": "Wimpod", "rate": 30, "level": { "min": 5, "max": 55 } },
         { "name": "Slowpoke", "rate": 20, "level": { "min": 5, "max": 55 } },
-        { "name": "Grimer-A", "rate": 10, "level": { "min": 5, "max": 55 } },
-        { "name": "Muk-A", "rate": 10, "level": 55 }
+        { "name": "Grimer-Alola", "rate": 10, "level": { "min": 5, "max": 55 } },
+        { "name": "Muk-Alola", "rate": 10, "level": 55 }
     ],
 
     "Route 121 Land": [
@@ -1215,7 +1215,7 @@
     "Safari Zone (South) Land": [
         { "name": "Nuzleaf", "rate": 20, "level": 56 },
         { "name": "Sawsbuck", "rate": 10, "level": 56 },
-        { "name": "Sawsbuck-A", "rate": 10, "level": 56 },
+        { "name": "Sawsbuck-Alola", "rate": 10, "level": 56 },
         { "name": "Sawsbuck-S", "rate": 10, "level": 56 },
         { "name": "Sawsbuck-W", "rate": 10, "level": 56 },
         { "name": "Maractus", "rate": 10, "level": 56 },
@@ -1234,7 +1234,7 @@
         { "name": "Victreebel", "rate": 10, "level": 67 },
         { "name": "Victreebel", "rate": 10, "level": 67 },
         { "name": "Lilligant", "rate": 10, "level": 67 },
-        { "name": "Lilligant-H", "rate": 10, "level": 67 },
+        { "name": "Lilligant-Hisui", "rate": 10, "level": 67 },
         { "name": "Arcanine", "rate": 5, "level": 67 },
         { "name": "Houndoom", "rate": 4, "level": 67 },
         { "name": "Volcarona", "rate": 1, "level": 67 }
@@ -1242,7 +1242,7 @@
 
     "Safari Zone (South) Surf": [
         { "name": "Primarina", "rate": 30, "level": 80 },
-        { "name": "Samurott-H", "rate": 30, "level": 80 },
+        { "name": "Samurott-Hisui", "rate": 30, "level": 80 },
         { "name": "Swampert", "rate": 20, "level": 80 },
         { "name": "Overqwil", "rate": 10, "level": 80 },
         { "name": "Jellicent", "rate": 10, "level": 80 }
@@ -1387,13 +1387,13 @@
         { "name": "Weavile", "rate": 20, "level": 90 },
         { "name": "Blastoise", "rate": 10, "level": 90 },
         { "name": "Primarina", "rate": 10, "level": 90 },
-        { "name": "Samurott-H", "rate": 10, "level": 90 },
+        { "name": "Samurott-Hisui", "rate": 10, "level": 90 },
         { "name": "Absol", "rate": 10, "level": 90 },
-        { "name": "Goodra-H", "rate": 10, "level": 90 },
+        { "name": "Goodra-Hisui", "rate": 10, "level": 90 },
         { "name": "Lopunny", "rate": 10, "level": 90 },
         { "name": "Blastoise", "rate": 5, "level": 90 },
         { "name": "Primarina", "rate": 5, "level": 90 },
-        { "name": "Samurott-H", "rate": 5, "level": 90 },
+        { "name": "Samurott-Hisui", "rate": 5, "level": 90 },
         { "name": "Mawile", "rate": 4, "level": 90 },
         { "name": "Mawile", "rate": 1, "level": 90 }
     ],
@@ -1493,7 +1493,7 @@
         { "name": "Victreebel", "rate": 10, "level": 67 },
         { "name": "Victreebel", "rate": 10, "level": 67 },
         { "name": "Lilligant", "rate": 10, "level": 67 },
-        { "name": "Lilligant-H", "rate": 10, "level": 67 },
+        { "name": "Lilligant-Hisui", "rate": 10, "level": 67 },
         { "name": "Arcanine", "rate": 5, "level": 67 },
         { "name": "Houndoom", "rate": 4, "level": 67 },
         { "name": "Volcarona", "rate": 1, "level": 67 }
@@ -1534,7 +1534,7 @@
         { "name": "Starmie", "rate": 10, "level": 72 },
         { "name": "Starmie", "rate": 10, "level": 72 },
         { "name": "Audino", "rate": 10, "level": 72 },
-        { "name": "Avalugg-H", "rate": 10, "level": 72 },
+        { "name": "Avalugg-Hisui", "rate": 10, "level": 72 },
         { "name": "Duraludon", "rate": 10, "level": 72 },
         { "name": "Goodra", "rate": 10, "level": 72 },
         { "name": "Hatterene", "rate": 5, "level": 72 },
@@ -1546,14 +1546,14 @@
 
     "Shoal Cave (Ice Room) Fishing": [
         { "name": "Sneasler", "rate": 20, "level": 72 },
-        { "name": "Sliggoo-H", "rate": 10, "level": 72 },
+        { "name": "Sliggoo-Hisui", "rate": 10, "level": 72 },
         { "name": "Audino", "rate": 10, "level": 72 },
-        { "name": "Avalugg-H", "rate": 10, "level": 72 },
-        { "name": "Avalugg-H", "rate": 10, "level": 72 },
+        { "name": "Avalugg-Hisui", "rate": 10, "level": 72 },
+        { "name": "Avalugg-Hisui", "rate": 10, "level": 72 },
         { "name": "Duraludon", "rate": 10, "level": 72 },
         { "name": "Mamoswine", "rate": 10, "level": 72 },
-        { "name": "Goodra-H", "rate": 5, "level": 72 },
-        { "name": "Sandslash-A", "rate": 4, "level": 72 },
+        { "name": "Goodra-Hisui", "rate": 5, "level": 72 },
+        { "name": "Sandslash-Alola", "rate": 4, "level": 72 },
         { "name": "Impidimp", "rate": 1, "level": { "min": 5, "max": 72 } }
     ],
 
@@ -1612,15 +1612,15 @@
 
     "Route 128 Land": [
         { "name": "Absol", "rate": 20, "level": 80 },
-        { "name": "Muk-A", "rate": 10, "level": 80 },
+        { "name": "Muk-Alola", "rate": 10, "level": 80 },
         { "name": "Aggron", "rate": 10, "level": 80 },
-        { "name": "Avalugg-H", "rate": 10, "level": 80 },
+        { "name": "Avalugg-Hisui", "rate": 10, "level": 80 },
         { "name": "Slowbro", "rate": 10, "level": 80 },
         { "name": "Slowking", "rate": 10, "level": 80 },
         { "name": "Walrein", "rate": 10, "level": 80 },
-        { "name": "Muk-A", "rate": 5, "level": 80 },
+        { "name": "Muk-Alola", "rate": 5, "level": 80 },
         { "name": "Primarina", "rate": 5, "level": 80 },
-        { "name": "Samurott-H", "rate": 5, "level": 80 },
+        { "name": "Samurott-Hisui", "rate": 5, "level": 80 },
         { "name": "Starmie", "rate": 4, "level": 80 },
         { "name": "Starmie", "rate": 1, "level": 80 }
     ],
@@ -1644,10 +1644,10 @@
         { "name": "Absol", "rate": 20, "level": 80 },
         { "name": "Weavile", "rate": 10, "level": 80 },
         { "name": "Grimmsnarl", "rate": 10, "level": 80 },
-        { "name": "Zoroark-H", "rate": 10, "level": 80 },
-        { "name": "Samurott-H", "rate": 10, "level": 80 },
-        { "name": "Avalugg-H", "rate": 10, "level": 80 },
-        { "name": "Goodra-H", "rate": 10, "level": 80 },
+        { "name": "Zoroark-Hisui", "rate": 10, "level": 80 },
+        { "name": "Samurott-Hisui", "rate": 10, "level": 80 },
+        { "name": "Avalugg-Hisui", "rate": 10, "level": 80 },
+        { "name": "Goodra-Hisui", "rate": 10, "level": 80 },
         { "name": "Weavile", "rate": 5, "level": 80 },
         { "name": "Sneasler", "rate": 5, "level": 80 },
         { "name": "Zoroark", "rate": 5, "level": 80 },
@@ -1672,17 +1672,17 @@
 
     "Seafloor Cavern Rooms 1-5 Land": [
         { "name": "Zorua", "rate": 20, "level": { "min": 5, "max": 99 } },
-        { "name": "Zorua-H", "rate": 10, "level": { "min": 5, "max": 99 } },
-        { "name": "Zorua-H", "rate": 10, "level": { "min": 5, "max": 99 } },
+        { "name": "Zorua-Hisui", "rate": 10, "level": { "min": 5, "max": 99 } },
+        { "name": "Zorua-Hisui", "rate": 10, "level": { "min": 5, "max": 99 } },
         { "name": "Zoroark", "rate": 10, "level": 100 },
         { "name": "Zoroark", "rate": 10, "level": 100 },
         { "name": "Zoroark", "rate": 10, "level": 100 },
-        { "name": "Zoroark-H", "rate": 10, "level": 100 },
-        { "name": "Zoroark-H", "rate": 5, "level": 100 },
-        { "name": "Zoroark-H", "rate": 5, "level": 100 },
-        { "name": "Zoroark-H", "rate": 5, "level": 100 },
-        { "name": "Zorua-H", "rate": 4, "level": { "min": 5, "max": 82 } },
-        { "name": "Zoroark-H", "rate": 1, "level": 82 }
+        { "name": "Zoroark-Hisui", "rate": 10, "level": 100 },
+        { "name": "Zoroark-Hisui", "rate": 5, "level": 100 },
+        { "name": "Zoroark-Hisui", "rate": 5, "level": 100 },
+        { "name": "Zoroark-Hisui", "rate": 5, "level": 100 },
+        { "name": "Zorua-Hisui", "rate": 4, "level": { "min": 5, "max": 82 } },
+        { "name": "Zoroark-Hisui", "rate": 1, "level": 82 }
     ],
 
     "Route 130 Land": [
@@ -1790,7 +1790,7 @@
 
     "Victory Road B1F Surf": [
         { "name": "Greninja", "rate": 30, "level": 85 },
-        { "name": "Samurott-H", "rate": 30, "level": 85 },
+        { "name": "Samurott-Hisui", "rate": 30, "level": 85 },
         { "name": "Starmie", "rate": 20, "level": 85 },
         { "name": "Primarina", "rate": 10, "level": 85 },
         { "name": "Primarina", "rate": 10, "level": 85 }
@@ -1820,7 +1820,7 @@
     ],
 
     "Victory Road B2F Rock Smash": [
-        { "name": "Avalugg-H", "rate": 60, "level": 85 },
+        { "name": "Avalugg-Hisui", "rate": 60, "level": 85 },
         { "name": "Glalie", "rate": 30, "level": 85 },
         { "name": "Mawile", "rate": 5, "level": 85 },
         { "name": "Metagross", "rate": 4, "level": 85 },

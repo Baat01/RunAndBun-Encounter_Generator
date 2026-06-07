@@ -1849,7 +1849,7 @@ mons = {
     "Wormadam-Sandy",
     "Wormadam-Trash",
     "Cherrim-Sunshine",
-    "Shellos",
+    "Shellos-East",
     "Gastrodon",
     "Rotom-Heat",
     "Rotom-Wash",
@@ -8762,7 +8762,7 @@ function setPCBoxMon(address, newNature, IVs, moveSlot, moveName, level, species
     end
 
     -- Held item
-    if heldItem then
+    if heldItem and item[heldItem] then
         local itemIx = indexOf(item, heldItem)
         ss0[0] = (ss0[0] & 0x0000FFFF) | (itemIx << 16)
     end
@@ -8892,7 +8892,7 @@ function setBoxMon(address, newNature, IVs, moveSlot, moveName, level, species,
         ss0[1] = expRequired(speciesIx, calcLevel(mon.experience, speciesIx))
     end
 
-    if (heldItem ~= nil) then
+    if (heldItem ~= nil) and item[heldItem] then
         local itemIx = indexOf(item, heldItem)
         ss0[0] = (ss0[0] & 0x0000FFFF) | (itemIx << 16)
     end
@@ -9906,7 +9906,6 @@ function DupedEncounterToPC(zoneNameInput, pcSlotIndex, repelManip,duping)
             local roll = math.random(1, 100)
             if roll <= chance then
                 chosenItem = itemInfo.item
-                break -- On a trouvé un objet, on arrête de chercher dans la table
             end
         end
     end
@@ -10175,7 +10174,6 @@ function DupedEncounterToParty(zoneNameInput, slotTarget, repelManip, duping)
             local roll = math.random(1, 100)
             if roll <= chance then
                 chosenItem = itemInfo.item
-                break -- On a trouvé un objet, on arrête de chercher dans la table
             end
         end
     end
